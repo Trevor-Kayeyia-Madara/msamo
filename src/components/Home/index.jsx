@@ -1,37 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Home = () => {
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-  };
-
+function Home() {
   return (
     <div>
-      {selectedOption === null ? (
-        <div>
-          <h1>Are you a:</h1>
-          <button onClick={() => handleOptionClick('Landlord')}>Landlord</button>
-          <button onClick={() => handleOptionClick('Tenant')}>Tenant</button>
-          <button onClick={() => handleOptionClick('Sell Land')}>Sell Land</button>
-          <button onClick={() => handleOptionClick('Sell Home')}>Sell Home</button>
-        </div>
-      ) : (
-        <div>
-          <h1>{selectedOption}</h1>
-          <button onClick={() => setSelectedOption(null)}>Go Back</button>
-          {selectedOption === 'Tenant' && (
-            <div>
-              <h2>RENEW SUBSCRIPTION</h2>
-              <p>Pay Renew. Details still in database.</p>
-              {/* You can add more details or functionalities here */}
-            </div>
-          )}
-        </div>
-      )}
+      <h1>Are you a:</h1>
+      <div>
+        <Link to="/landlord"><button>Landlord</button></Link>
+        <Link to="/tenant"><button>Tenant</button></Link>
+        <Link to="/sell-land"><button>Sell Land</button></Link>
+        <Link to="/sell-home"><button>Sell Home</button></Link>
+      </div>
+      <div>
+        <button>RENEW SUBSCRIPTION</button>
+      </div>
     </div>
   );
-};
+}
 
 export default Home;
