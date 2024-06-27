@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Loading.css'; // Import CSS for loading spinner
+import './Loading.css';
+import { FaHome } from 'react-icons/fa'; // Import CSS for loading spinner
 
 const Loading = () => {
   const navigate = useNavigate();
@@ -17,7 +18,8 @@ const Loading = () => {
   return (
     <div className="loading-container">
       <div className="loader"></div>
-      <h1>Loading...</h1>
+      <FaHome className="icon" />
+      <h1 className="heading">Msamo Homes</h1>
     </div>
   );
 };
