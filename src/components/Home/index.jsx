@@ -1,40 +1,42 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
 const Home = () => {
   return (
-    <div className="container text-center mt-5">
+    <div className="container">
       <h1>ARE YOU A:</h1>
-      <button 
-        className="btn btn-primary btn-lg d-block mx-auto my-3"
-        onClick={() => {/* Handle Landlord button click */}}
-      >
-        Landlord
-      </button>
-      <button 
-        className="btn btn-primary btn-lg d-block mx-auto my-3"
-        onClick={() => {/* Handle Tenant button click */}}
-      >
-        Tenant
-      </button>
-      <button 
-        className="btn btn-primary btn-lg d-block mx-auto my-3"
-        onClick={() => {/* Handle Sell Land button click */}}
-      >
-        Sell Land
-      </button>
-      <button 
-        className="btn btn-primary btn-lg d-block mx-auto my-3"
-        onClick={() => {/* Handle Sell Home button click */}}
-      >
-        Sell Home
-      </button>
-      <button 
-        className="btn btn-primary btn-lg d-block mx-auto my-3"
-        onClick={() => {/* Handle Renew Subscription button click */}}
-      >
-        RENEW SUBSCRIPTION
-      </button>
+      <div className="button-group">
+        <button 
+          className="button"
+          onClick={() => {/* Handle Landlord button click */}}
+        >
+          Landlord
+        </button>
+        <button 
+          className="button"
+          onClick={() => {/* Handle Tenant button click */}}
+        >
+          Tenant
+        </button>
+        <button 
+          className="button"
+          onClick={() => {/* Handle Sell Land button click */}}
+        >
+          Sell Land
+        </button>
+        <button 
+          className="button"
+          onClick={() => {/* Handle Sell Home button click */}}
+        >
+          Sell Home
+        </button>
+        <button 
+          className="button"
+          onClick={() => {/* Handle Renew Subscription button click */}}
+        >
+          RENEW SUBSCRIPTION
+        </button>
+      </div>
     </div>
   );
 }
