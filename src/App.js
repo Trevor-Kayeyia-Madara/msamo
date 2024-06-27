@@ -6,6 +6,7 @@ import Landlord from './components/Landlord';
 import Tenant from './components/Tenant';
 import SellLand from './components/SellLand';
 import SellHome from './components/SellHome';
+import SignUp from './components/SignUp/index';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/landlord" element={<Landlord />} />
           <Route path="/tenant" element={<Tenant />} />
         <Route path="/sell-land" element={<SellLand />} />
