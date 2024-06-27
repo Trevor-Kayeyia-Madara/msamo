@@ -85,7 +85,7 @@ const Home = () => {
               <b>JISIMAMIE !</b>
             </p>
             <div className="buttonContainer">
-              <button to="/login&signup" className="login-button">Login or Sign Up</button>
+              <button to="/sign-in" className="login-button">Log In</button>
             </div>
           </div>
         )}
