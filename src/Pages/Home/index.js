@@ -36,7 +36,7 @@ const Home = () => {
               <b>Msamo Properties App is here to relieve the property owners of huge charges by agents and brokers.</b>
             </p>
             <div className="buttonContainer">
-              <a href="/login&signup" className="login-button">Login or Sign Up</a>
+              <a href="/sign-in" className="login-button">Login</a>
             </div>
           </div>
         )}
@@ -54,7 +54,7 @@ const Home = () => {
               <b>EPUKA KUGONGWA NA AGENTS</b>
             </p>
             <div className="buttonContainer">
-              <button to="/login&signup" className="login-button">Login or Sign Up</button>
+              <button to="/sign-in" className="login-button">Login</button>
             </div>
           </div>
         )}
@@ -69,7 +69,7 @@ const Home = () => {
               <b>JISIMAMIE !</b>
             </p>
             <div className="buttonContainer">
-              <button to="/login&signup" className="login-button">Login or Sign Up</button>
+              <button to="/sign-in" className="login-button">Login</button>
             </div>
           </div>
         )}
