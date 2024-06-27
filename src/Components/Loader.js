@@ -1,5 +1,3 @@
-// Loader.js
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Loader.css'; // Import your CSS for styling

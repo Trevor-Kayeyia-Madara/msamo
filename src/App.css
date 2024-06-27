@@ -5,9 +5,7 @@
 }
 
 body {
-  background-image: url('./images/background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; /* Adjust as needed */
+    background-color: #282c34;/* Adjust as needed */
 }
 
 .App {
