@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHome } from 'react-icons/fa';
 
 const Home = () => {
   const [view, setView] = useState('home');
@@ -10,6 +11,8 @@ const Home = () => {
 
   return (
     <div style={styles.container}>
+        <FaHome style={styles.icon} />
+        <h1 style={styles.heading}>Msamo Homes</h1>
       {view === 'home' && (
         <>
           <h1 style={styles.heading}>ARE YOU A:</h1>
@@ -91,6 +94,12 @@ const styles = {
     textAlign: 'center',
     marginTop: '50px'
   },
+  icon: {
+    fontSize: '48px',
+    marginBottom: '10px',
+    color: '#007bff', // Example color
+  },
+
   heading: {
     marginBottom: '20px'
   },

@@ -8,6 +8,7 @@ import SellLand from './components/SellLand';
 import SellHome from './components/SellHome';
 import SignUp from './components/SignUp/index';
 import Login from './components/Login';
+import Loading from './components/Home/Loading';
 
 
 const App = () => {
@@ -15,7 +16,8 @@ const App = () => {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Loading />} />
+          <Route  path='/home' element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/landlord" element={<Landlord />} />
