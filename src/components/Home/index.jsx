@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './style.css';  // Import the CSS file
+import './home.css';  // Import the CSS file
 
 const Home = () => {
   const [view, setView] = useState('home');
@@ -79,8 +79,8 @@ const Home = () => {
 
         </div>
       )}
-        <Link to="/signup" className="button">Sign up</Link>
-        <Link to="/login" className="button">Login</Link>
+          <Link to="/sign-up" className="signup-link">Sign up</Link>
+          <Link to="/login" className="login-link">Login</Link>
     </div>
   );
 };

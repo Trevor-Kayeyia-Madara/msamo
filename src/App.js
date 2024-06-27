@@ -6,7 +6,8 @@ import Tenant from './components/Tenant';
 import SellLand from './components/SellLand';
 import SellHome from './components/SellHome';
 import Loading from './components/Home/Loading';
-
+import SignUp from './components/SignUp';
+import Login from './components/Login';
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Loading />} />
           <Route  path='/home' element={<Home />} />
+          <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
           <Route path="/landlord" element={<Landlord />} />
           <Route path="/tenant" element={<Tenant />} />
         <Route path="/sell-land" element={<SellLand />} />

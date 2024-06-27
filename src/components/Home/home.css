@@ -40,6 +40,29 @@
   margin: 10px;
 }
 
+.signup-link,
+.login-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: #007bff; /* Example background color */
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Example box shadow */
+  margin-right: 20px; /* Example margin */
+}
+
+.signup-link:hover,
+.login-link:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+.login-link {
+  margin-right: 0; /* Remove margin-right for the last link */
+}
+
+
+
 .button:hover {
   transform: scale(1.05);
 }
