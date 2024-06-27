@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate hook for navigation
 
 function Login() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     phoneNumber: '',
     password: '',
   });
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,16 +17,44 @@ function Login() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Logic to handle login submission, e.g., sending data to backend
-    console.log('Login form submitted', formData);
-    // Redirect or handle successful login
+
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData.error);
+        return;
+      }
+
+      const userData = await response.json();
+      console.log('Login successful!', userData);
+
+      // Example: Redirect to Choice.jsx based on user role or choice
+      if (userData.user.role === 'landlord' || userData.user.role === 'tenant' || userData.user.role === 'seller') {
+        navigate('/choice', { state: { userRole: userData.user.role } });
+      } else {
+        // Handle other roles or redirect to a default page
+        navigate('/default');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setError('Failed to connect to the server. Please try again later.');
+    }
   };
 
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>Login</h2>
+      {error && <div style={styles.error}>{error}</div>}
       <form onSubmit={handleSubmit} style={styles.form}>
         <div style={styles.formGroup}>
           <label style={styles.label}>
@@ -96,6 +127,11 @@ const styles = {
     backgroundColor: '#007bff',
     color: '#fff',
     cursor: 'pointer',
+  },
+  error: {
+    color: 'red',
+    marginBottom: '10px',
+    textAlign: 'center',
   },
 };
 

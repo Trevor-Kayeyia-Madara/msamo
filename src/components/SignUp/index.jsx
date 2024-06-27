@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Assuming you're using React Router
 
 function SignUp() {
@@ -47,14 +47,37 @@ function SignUp() {
     alert('Phone verification code sent');
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Logic to handle form submission, e.g., sending data to backend
     console.log('Form submitted', formData);
 
-    // Assuming successful signup, navigate to login page
-    navigate('/login');
+    try {
+      const response = await fetch('http://localhost:5000/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      // Assuming successful signup, navigate to login page
+      navigate('/login');
+    } catch (error) {
+      console.error('Error:', error);
+      // Handle error state or display an error message to the user
+    }
   };
+
+  // useEffect example (if needed for other purposes)
+  useEffect(() => {
+    // Example of using useEffect for other side effects
+    // You can add dependencies if necessary
+  }, []);
 
   return (
     <div style={styles.container}>
