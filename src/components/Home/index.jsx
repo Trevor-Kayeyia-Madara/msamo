@@ -20,7 +20,6 @@ const Home = () => {
             <button className="button" onClick={() => handleButtonClick('tenant')}>Tenant</button>
             <button className="button" onClick={() => handleButtonClick('sellLand')}>Sell Land</button>
             <button className="button" onClick={() => handleButtonClick('sellHome')}>Sell Home</button>
-            <button className="button" onClick={() => handleButtonClick('renewSubscription')}>Renew Subscription</button>
           </div>
         </>
       )}
