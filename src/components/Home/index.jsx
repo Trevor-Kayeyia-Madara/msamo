@@ -36,9 +36,6 @@ const Home = () => {
             <br />
             <b>Msamo Properties App is here to relieve the property owners of huge charges by agents and brokers.</b>
           </p>
-          <Link to="/signup">
-            <button className="button">Create Account</button>
-          </Link>
         </div>
       )}
 
@@ -54,9 +51,6 @@ const Home = () => {
             or a unit of your choice. <br />
             <b>EPUKA KUGONGWA NA AGENTS</b>
           </p>
-          <Link to="/signup">
-            <button className="button">Create Account</button>
-          </Link>
         </div>
       )}
 
@@ -69,9 +63,6 @@ const Home = () => {
           <br />
             <b>JISIMAMIE !</b>
           </p>
-          <Link to="/signup">
-            <button className="button">Create Account</button>
-          </Link>
         </div>
       )}
 
@@ -85,11 +76,11 @@ const Home = () => {
           <br />
           <b>JISIMAMIE !</b>
           </p>
-          <Link to="/signup">
-            <button className="button">Create Account</button>
-          </Link>
+
         </div>
       )}
+        <Link to="/signup" className="button">Sign up</Link>
+        <Link to="/login" className="button">Login</Link>
     </div>
   );
 };
