@@ -1,4 +1,4 @@
-.container {
+.content {
   text-align: center;
   margin: 20px auto;
   max-width: 1200px;
@@ -14,12 +14,12 @@
   color: #007bff;
 }
 
-.heading {
+.title {
   margin-bottom: 20px;
   font-size: 2em;
 }
 
-.buttonContainer {
+.buttonContent {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

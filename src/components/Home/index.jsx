@@ -10,12 +10,12 @@ const Home = () => {
   };
 
   return (
-    <div className="container">
+    <div className="content">
     
       {view === 'home' && (
         <>
-          <h1 className="heading">ARE YOU A:</h1>
-          <div className="buttonContainer">
+          <h1 className="title">ARE YOU A:</h1>
+          <div className="buttonContent">
             <button className="button" onClick={() => handleButtonClick('landlord')}>Landlord</button>
             <button className="button" onClick={() => handleButtonClick('tenant')}>Tenant</button>
             <button className="button" onClick={() => handleButtonClick('sellLand')}>Sell Land</button>
