@@ -1,106 +1,102 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './sign.css';  
-import { useNavigate } from 'react-router-dom';// Import the CSS file
+import React,{useState} from 'react'
+import { Link } from 'react-router-dom';
+import './sign.css'
 
-const SignUp = () => {
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    fullName: '',
-    companyName: '',
-    email: '',
-    emailVerificationCode: '',
-    phoneNumber: '',
-    phoneVerificationCode: '',
-    password: '',
-  });
+function SignUp() {
+ // State variables for form inputs
+ const [fullNames, setFullName] = useState('');
+ const [companyName, setCompanyName] = useState('');
+ const [email, setEmail] = useState('');
+ const [phoneNumber, setPhoneNumber] = useState('');
+ const [password, setPassword] = useState('');
+ const [confirmPassword, setConfirmPassword] = useState('');
 
-  // const [emailVerified, setEmailVerified] = useState(false);
-  // const [phoneVerified, setPhoneVerified] = useState(false);
+ // Handle form submission
+ const handleSubmit = (event) => {
+   event.preventDefault();
+   // Perform form validation and submission logic here
+   console.log('Form submitted:', { fullNames, companyName, email, phoneNumber, password, confirmPassword });
+   // Reset form fields if needed
+   setFullName('');
+   setCompanyName('');
+   setEmail('');
+   setPhoneNumber('');
+   setPassword('');
+   setConfirmPassword('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
+ };
 
-  // const handleEmailVerification = () => {
-  //   // Send verification code to email
-  //   axios.post('http://localhost:5000/verify-email', { email: formData.email })
-  //     .then(response => {
-  //       alert('Verification code sent to your email.');
-  //     })
-  //     .catch(error => {
-  //       console.error('Error sending email verification code:', error);
-  //     });
-  // };
-
-  // const handlePhoneVerification = () => {
-  //   // Send verification code to phone
-  //   axios.post('http://localhost:5000/verify-phone', { phoneNumber: formData.phoneNumber })
-  //     .then(response => {
-  //       alert('Verification code sent to your phone.');
-  //     })
-  //     .catch(error => {
-  //       console.error('Error sending phone verification code:', error);
-  //     });
-  // };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Submit form data to backend
-    axios.post('http://localhost:5000/signup', formData)
-      .then(response => {
-        alert('Sign-up successful!');
-        navigate('/login');
-      })
-      .catch(error => {
-        console.error('Error during sign-up:', error);
-      });
-  };
-
-  return (
-    <div className="container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit} className="form">
-        <div className="formGroup">
-          <label>
-            Full Name:
-            <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} required className="input" />
-          </label>
-        </div>
-        <div className="formGroup">
-          <label>
-            Company Name:
-            <input type="text" name="companyName" value={formData.companyName} onChange={handleChange} required className="input" />
-          </label>
-        </div>
-        <div className="formGroup">
-          <label>
-            Email:
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required className="input" />
-          
-          </label>
-        </div>
+ return (
+   <div className="wrapper">
+     <h2>SIGN UP</h2>
+     <form onSubmit={handleSubmit}>
+       <div className="input-box">
+         <input
+           type="text"
+           placeholder="Enter your full names"
+           value={fullNames}
+           onChange={(e) => setFullName(e.target.value)}
+           required
+         />
+       </div>
+       <div className="input-box">
+         <input
+           type="text"
+           placeholder="Enter your company name"
+           value={companyName}
+           onChange={(e) => setCompanyName(e.target.value)}
+           required
+         />
+       </div>
+       <div className="input-box">
+         <input
+           type="text"
+           placeholder="Enter your email"
+           value={email}
+           onChange={(e) => setEmail(e.target.value)}
+           required
+         />
+       </div>
+       <div className="input-box">
+         <input
+           type="text"
+           placeholder="Enter your phone number"
+           value={phoneNumber}
+           onChange={(e) => setPhoneNumber(e.target.value)}
+           required
+         />
+       </div>
+       <div className="input-box">
+         <input
+           type="password"
+           placeholder="Create password"
+           value={password}
+           onChange={(e) => setPassword(e.target.value)}
+           required
+         />
+       </div>
+       <div className="input-box">
+         <input
+           type="password"
+           placeholder="Confirm password"
+           value={confirmPassword}
+           onChange={(e) => setConfirmPassword(e.target.value)}
+           required
+         />
+       </div>
        
-        <div className="formGroup">
-          <label>
-            Phone Number:
-            <input type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required className="input" />
-          </label>
-        </div>
-        <div className="formGroup">
-          <label>
-            Preferred Password:
-            <input type="password" name="password" value={formData.password} onChange={handleChange} required className="input" />
-          </label>
-        </div>
-        <button type="submit" className="submitButton">Sign Up</button>
-      </form>
-    </div>
-  );
+       <div className="input-box button">
+         <input type="submit" value="Register Now" />
+       </div>
+       <div className="text">
+         <h3>
+           Already have an account? <Link to='/login'>Login now</Link>
+         </h3>
+       </div>
+     </form>
+   </div>
+ );
 };
 
-export default SignUp;
+
+export default SignUp
