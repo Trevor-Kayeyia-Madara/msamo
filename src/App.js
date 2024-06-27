@@ -1,10 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import Landlord from './components/Landlord';
-import Tenant from './components/Tenant';
-import SellLand from './components/SellLand';
-import SellHome from './components/SellHome';
+import Home from './components/Home/home';
 import Loading from './components/Home/Loading';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
@@ -18,10 +14,6 @@ const App = () => {
           <Route  path='/home' element={<Home />} />
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/login' element={<Login />} />
-          <Route path="/landlord" element={<Landlord />} />
-          <Route path="/tenant" element={<Tenant />} />
-        <Route path="/sell-land" element={<SellLand />} />
-        <Route path="/sell-home" element={<SellHome />} />
         </Routes>
       </div>
     </Router>
