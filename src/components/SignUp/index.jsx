@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './sign.css';  // Import the CSS file
+import './sign.css';  
+import { useNavigate } from 'react-router-dom';// Import the CSS file
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     companyName: '',
@@ -24,27 +26,27 @@ const SignUp = () => {
     }));
   };
 
-  const handleEmailVerification = () => {
-    // Send verification code to email
-    axios.post('http://localhost:5000/verify-email', { email: formData.email })
-      .then(response => {
-        alert('Verification code sent to your email.');
-      })
-      .catch(error => {
-        console.error('Error sending email verification code:', error);
-      });
-  };
+  // const handleEmailVerification = () => {
+  //   // Send verification code to email
+  //   axios.post('http://localhost:5000/verify-email', { email: formData.email })
+  //     .then(response => {
+  //       alert('Verification code sent to your email.');
+  //     })
+  //     .catch(error => {
+  //       console.error('Error sending email verification code:', error);
+  //     });
+  // };
 
-  const handlePhoneVerification = () => {
-    // Send verification code to phone
-    axios.post('http://localhost:5000/verify-phone', { phoneNumber: formData.phoneNumber })
-      .then(response => {
-        alert('Verification code sent to your phone.');
-      })
-      .catch(error => {
-        console.error('Error sending phone verification code:', error);
-      });
-  };
+  // const handlePhoneVerification = () => {
+  //   // Send verification code to phone
+  //   axios.post('http://localhost:5000/verify-phone', { phoneNumber: formData.phoneNumber })
+  //     .then(response => {
+  //       alert('Verification code sent to your phone.');
+  //     })
+  //     .catch(error => {
+  //       console.error('Error sending phone verification code:', error);
+  //     });
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,6 +54,7 @@ const SignUp = () => {
     axios.post('http://localhost:5000/signup', formData)
       .then(response => {
         alert('Sign-up successful!');
+        navigate('/login');
       })
       .catch(error => {
         console.error('Error during sign-up:', error);
@@ -78,26 +81,14 @@ const SignUp = () => {
           <label>
             Email:
             <input type="email" name="email" value={formData.email} onChange={handleChange} required className="input" />
-            <button type="button" onClick={handleEmailVerification} className="verifyButton">Verify Email</button>
+          
           </label>
         </div>
-        <div className="formGroup">
-          <label>
-            Email Verification Code:
-            <input type="text" name="emailVerificationCode" value={formData.emailVerificationCode} onChange={handleChange} required className="input" />
-          </label>
-        </div>
+       
         <div className="formGroup">
           <label>
             Phone Number:
             <input type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required className="input" />
-            <button type="button" onClick={handlePhoneVerification} className="verifyButton">Verify Phone</button>
-          </label>
-        </div>
-        <div className="formGroup">
-          <label>
-            Phone Verification Code:
-            <input type="text" name="phoneVerificationCode" value={formData.phoneVerificationCode} onChange={handleChange} required className="input" />
           </label>
         </div>
         <div className="formGroup">
