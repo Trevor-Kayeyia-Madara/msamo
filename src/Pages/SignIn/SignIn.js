@@ -22,16 +22,20 @@ const SignInForm = () => {
     event.preventDefault();
     try {
       const response = await axios.post('https://msamo-backend.onrender.com/signin', credentials);
-      console.log(response.data);
-      toast.success('Login successful!', {
-        position: toast.POSITION.TOP_CENTER,
-        autoClose: 3000,
-        onClose: () => navigate('/payment') // Navigate to payment page after toast
-      });
+      const user = response.data.user;
+      if (user) {
+        toast.success('Login successful!', {
+          position: "top-center",
+          autoClose: 3000,
+          onClose: () => navigate('/payment')
+        });
+      } else {
+        throw new Error('Login failed');
+      }
     } catch (error) {
       console.error('There was an error signing in!', error);
       toast.error('Login failed. Please check your credentials and try again.', {
-        position: toast.POSITION.TOP_CENTER,
+        position: "top-center",
         autoClose: 3000,
       });
     }

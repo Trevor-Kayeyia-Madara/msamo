@@ -4,8 +4,8 @@ import Home from './Pages/Home/index';
 import Loader from './Components/Loader';
 import SignIn from './Pages/SignIn/SignIn';
 import SignUpForm from './Pages/SignUp/SignUpForm';
-import Payment from './Pages/Payment';
 import './App.css'
+import Payment from './Pages/Landlord';
 
 
 const App = () => {
@@ -17,6 +17,7 @@ const App = () => {
         <Route path="/login" element={<SignIn />} />
           <Route path='/' element={<Loader />} />
           <Route path='/payment' element={<Payment />} />
+       
         <Route path='/home' element={<Home />}/>
         </Routes>
       </div>

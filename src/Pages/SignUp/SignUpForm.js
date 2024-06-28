@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from React Router
+import { toast } from 'react-toastify'; // Import toast from react-toastify
+import 'react-toastify/dist/ReactToastify.css'; // Import the default CSS
+
 import './SignUpForm.css';
 
 const SignUpForm = () => {
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -32,8 +38,16 @@ const SignUpForm = () => {
         phone_number: '',
         preferred_password: ''
       });
+
+      // Show success toast
+      toast.success('Sign up successful! Redirecting to login...', {
+        autoClose: 3000, // Close the toast after 3 seconds
+        onClose: () => navigate('/login') // Redirect to login page after toast is closed
+      });
     } catch (error) {
       console.error('There was an error signing up!', error);
+      // Show error toast
+      toast.error('Error signing up. Please try again later.');
     }
   };
 
