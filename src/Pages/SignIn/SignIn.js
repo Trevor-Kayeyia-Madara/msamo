@@ -1,29 +1,73 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './SignIn.css' // Assuming you use React Router for navigation
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './SignIn.css';
 
 const SignInForm = () => {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        // Handle form submission logic here
-    };
+  const [credentials, setCredentials] = React.useState({
+    phone_number: '',
+    preferred_password: ''
+  });
 
-    return (
-        <div className="signin-form">
-            <h2>Sign In</h2>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required />
+  const navigate = useNavigate();
 
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" required />
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCredentials({ ...credentials, [name]: value });
+  };
 
-                <button type="submit">Sign In</button>
-            </form>
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/signin', credentials);
+      console.log(response.data);
+      toast.success('Login successful!', {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000,
+        onClose: () => navigate('/payment') // Navigate to payment page after toast
+      });
+    } catch (error) {
+      console.error('There was an error signing in!', error);
+      toast.error('Login failed. Please check your credentials and try again.', {
+        position: toast.POSITION.TOP_CENTER,
+        autoClose: 3000,
+      });
+    }
+  };
 
-            <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
-        </div>
-    );
+  return (
+    <div className="signin-form">
+      <h2>Sign In</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="phone">Phone Number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone_number"
+          value={credentials.phone_number}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="preferred_password"
+          value={credentials.preferred_password}
+          onChange={handleChange}
+          required
+        />
+
+        <button type="submit">Sign In</button>
+      </form>
+
+      <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
+      <ToastContainer />
+    </div>
+  );
 };
 
 export default SignInForm;

@@ -4,6 +4,7 @@ import Home from './Pages/Home/index';
 import Loader from './Components/Loader';
 import SignIn from './Pages/SignIn/SignIn';
 import SignUpForm from './Pages/SignUp/SignUpForm';
+import Payment from './Pages/Payment';
 import './App.css'
 
 
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/signup" element={<SignUpForm />} />
         <Route path="/sign-in" element={<SignIn />} />
           <Route path='/' element={<Loader />} />
+          <Route path='/payment' element={<Payment />} />
         <Route path='/home' element={<Home />}/>
         </Routes>
       </div>
