@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style.css'; // Import the CSS file for styling
 
 const Payment = () => {
-  const [view, setView] = useState('home');
+  const [view, setView] = useState('payment');
 
   const handleButtonClick = (action) => {
     setView(action);
