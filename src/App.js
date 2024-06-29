@@ -5,7 +5,7 @@ import Loader from './Components/Loader';
 import SignIn from './Pages/SignIn/SignIn';
 import SignUpForm from './Pages/SignUp/SignUpForm';
 import './App.css'
-import Payment from './Pages/Landlord';
+import Payment from './Pages/Payment';
 
 
 const App = () => {
