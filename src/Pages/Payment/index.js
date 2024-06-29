@@ -13,7 +13,7 @@ const Payment = () => {
       <div className="content">
         {view === 'payment' && (
           <>
-            <h1 className="title">ARE YOU A:</h1>
+            <h1 className="title">Please Choose:</h1>
             <div className="buttonContent">
               <button className="button" onClick={() => handleButtonClick('landlord')}>Landlord</button>
               <button className="button" onClick={() => handleButtonClick('tenant')}>Tenant</button>
