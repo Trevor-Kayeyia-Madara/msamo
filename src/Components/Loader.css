@@ -9,7 +9,10 @@
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
 }
-
+.loading-logo {
+  width: 150px; /* Adjust the width as needed */
+  margin-bottom: 20px; /* Add space between the logo and the loader */
+}
 .lds-ellipsis,
 .lds-ellipsis div {
   box-sizing: border-box;

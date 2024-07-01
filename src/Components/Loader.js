@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../images/logo.jpg'
 import './Loader.css'; // Import your CSS for styling
 
 const Loader = () => {
@@ -17,6 +18,7 @@ const Loader = () => {
   if (isLoading) {
     return (
       <div className="loading-screen">
+        <img src={Logo} alt='Logo' className='loading-logo'/>
         <div className="lds-ellipsis">
           <div></div>
           <div></div>
