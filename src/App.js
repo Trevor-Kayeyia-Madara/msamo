@@ -5,7 +5,9 @@ import Loader from './Components/Loader';
 import SignIn from './Pages/SignIn/SignIn';
 import TenantForm from './Pages/Tenant';
 import LandlordForm from './Pages/Landlord';
-import Pay from './Pages/Payment/pay';
+import Pay from './Pages/Payment/Pay';
+import Land from './Pages/Property/Land';
+import Sell from './Pages/Property/Sell';
 import SignUpForm from './Pages/SignUp/SignUpForm';
 import './App.css'
 import Payment from './Pages/Payment';
@@ -18,6 +20,8 @@ const App = () => {
         <Routes>
           <Route path="/signup" element={<SignUpForm />} />
           <Route path='/pay-now' element={<Pay />} />
+          <Route path='/sellhome-form' element={<Sell />} />
+          <Route path='/sellland-form' element={<Land />} />
           <Route path="/landlord-form" element={<LandlordForm />} />
           <Route path="/tenant-form" element={<TenantForm />} />
         <Route path="/login" element={<SignIn />} />
