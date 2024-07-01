@@ -28,7 +28,7 @@ function LipaNaMpesa() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://daraja-1any.onrender.com/mpesa/stkpush', {
+      const res = await axios.post('https://daraja-1any.onrender.com/api/stkpush', {
         BusinessShortCode: "4138551",
         Password: password,
         Timestamp: timestamp,
