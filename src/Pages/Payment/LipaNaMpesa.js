@@ -1,7 +1,6 @@
-import React from 'react';
+import React from 'react'
 import './paynow.css';
-
-function Pay() {
+function LipaNaMpesa() {
   return (
     <div className="pay-now">
     <h2>Complete Payment</h2>
@@ -16,4 +15,4 @@ function Pay() {
   )
 }
 
-export default Pay
+export default LipaNaMpesa
