@@ -5,7 +5,7 @@ import Loader from './Components/Loader';
 import SignIn from './Pages/SignIn/SignIn';
 import TenantForm from './Pages/Tenant';
 import LandlordForm from './Pages/Landlord';
-import Pay from './Pages/Payment/Pay';
+import Pay from './Pages/Payment/Lipa';
 import Land from './Pages/Property/Land';
 import Sell from './Pages/Property/Sell';
 import SignUpForm from './Pages/SignUp/SignUpForm';
