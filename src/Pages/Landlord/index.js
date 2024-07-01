@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import Dropzone from 'react-dropzone';
 import './land.css';
 
@@ -15,6 +16,7 @@ const counties = [
 ];
 
 function LandlordForm() {
+  const navigate = useNavigate();
   const [selectedCounty, setSelectedCounty] = useState('');
   const [selectedArea, setSelectedArea] = useState('');
   const [description, setDescription] = useState('');
@@ -57,6 +59,7 @@ function LandlordForm() {
       console.log('Success:', response.data);
       setSuccessMessage('Property listed successfully and payment initiated.');
       setLoading(false);
+      navigate('/payment')
       // Handle payment and further actions
     } catch (error) {
       console.error('Error:', error);
