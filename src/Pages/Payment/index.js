@@ -54,7 +54,7 @@ const Payment = () => {
               <b>EPUKA KUGONGWA NA AGENTS</b>
             </p>
             <div className="buttonContainer">
-              <button to="/tenant-form" className="login-button">Tenant Form</button>
+              <a href="/tenant-form" className="login-button">Tenant Form</a>
             </div>
           </div>
         )}

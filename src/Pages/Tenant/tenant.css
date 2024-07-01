@@ -1,0 +1,62 @@
+.landlord-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .landlord-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .landlord-form input[type="text"],
+  .landlord-form input[type="number"],
+  .landlord-form textarea,
+  .landlord-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .landlord-form textarea {
+    resize: vertical;
+  }
+  
+  .dropzone {
+    width: 100%;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+  
+  .dropzone p {
+    margin: 0;
+    color: #888;
+  }
+  
+  .landlord-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .landlord-form button:hover {
+    background-color: #0056b3;
+  }
+  
