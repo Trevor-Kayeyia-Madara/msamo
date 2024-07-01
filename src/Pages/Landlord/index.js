@@ -9,10 +9,9 @@ const counties = [
   { name: 'Nairobi', areas: ['Bahati, Nairobi', 'Buruburu', 'Dagoretti', /* ...other areas */ ] },
   { name: 'Mombasa', areas: ['Mvita', 'Nyali', 'Changamwe', 'Jomvu', 'Kisauni', 'Likoni'] },
   { name: 'Kisumu', areas: ['Mamboleo', 'Nyando', 'Bandani', 'Kisumu Central', 'Kondele', 'Lolwe Estate', 'Manyatta', 'Milimani', 'Muhoroni'] },
-  { name: 'Eldoret', areas: ['Area 2-1', 'Area 2-2'] },
-  { name: 'Nakuru', areas: ['Area 1-1', 'Area 1-2'] },
-  { name: 'Kwale', areas: ['Area 2-1', 'Area 2-2'] },
-  { name: 'Machakos', areas: ['Area 1-1', 'Area 1-2'] },
+  { name: 'Nakuru', areas: ['Naivasha', 'Molo', 'Gilgil', 'Njoro', 'Mai Mahiu', 'Subukia', 'Dundori', 'Salgaa', 'Mau Narok', 'Bahati', 'Rongai', 'Olenguruone'] },
+  { name: 'Kwale', areas: ['Gombato Bongwe', 'Ukunda', 'Kinondo', 'Ramisi', 'Pongwe', 'Kikoneni', 'Dzombo', 'Vanga', 'Mwereni', 'Tsimba Golini', 'Waa', 'Tiwi', 'Kubo South', 'Mkongani', 'Ndavaya', 'Puma', 'Kinango', 'Chengoni/Samburu', 'Mackinon Road', 'Mwavumbo', 'Kasemeni'] },
+  { name: 'Machakos', areas: ['Machakos Town', 'Mavoko', 'Masinga', 'Yatta', 'Kangundo', 'Kathiani', 'Matungulu', 'Mwala'] },
 ];
 
 function LandlordForm() {
