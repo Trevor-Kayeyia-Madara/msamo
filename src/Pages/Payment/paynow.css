@@ -1,0 +1,28 @@
+.pay-now {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .pay-now h2 {
+    margin-bottom: 20px;
+  }
+  
+  .pay-now ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pay-now li {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .pay-now p {
+    margin-top: 20px;
+  }
+  
