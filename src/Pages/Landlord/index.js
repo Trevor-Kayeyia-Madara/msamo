@@ -59,7 +59,7 @@ function LandlordForm() {
       console.log('Success:', response.data);
       setSuccessMessage('Property listed successfully and payment initiated.');
       setLoading(false);
-      navigate('/payment')
+      navigate('/pay-now')
       // Handle payment and further actions
     } catch (error) {
       console.error('Error:', error);
