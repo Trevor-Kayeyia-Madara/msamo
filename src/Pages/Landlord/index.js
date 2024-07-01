@@ -74,7 +74,7 @@ const counties = [
       });
   
       try {
-        const response = await axios.post('https://msamo-backend.onrender.com/properties', formData, {
+        const response = await axios.post('https://msamo-backend.onrender.com/landlord', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
